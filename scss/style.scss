@@ -1,4 +1,9 @@
 @import 'defaults.scss';
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@200;400;700&family=Roboto:wght@100;300;400&display=swap');
+
+$header-font: 'Azeret Mono', monospace;
+$body-font: 'Roboto', sans-serif;
+
 $padding-sm: 1rem;
 $padding-md: 2rem;
 $padding-lg: 3rem;
@@ -11,26 +16,27 @@ $margin-sm: .5rem;
 $margin-md: 1rem;
 $margin-lg: 2rem;
 
-$color1: rgb(255, 255, 255);
-$color2: #696c5f;
-$color3: rgba(253, 187, 45, .8);
+$color1: #e9e6c9;
+$color2: #566683;
+$color3: #ca6144;
+$color4: #393e51;
 
 $color1-trans: rgba(255, 255, 255, .7);
 
 $radius-sm: 10px;
-$radius-md: 80px;
-$radius-lg: 300px;
+$radius-md: 5vw;
+$radius-lg: 20vw;
 main {
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: linear-gradient(163deg, rgba(101, 108, 95, 1) 8%, rgba(253, 187, 45, 0.61) 100%);
+	background: linear-gradient(163deg, $color2 8%, $color3 100%);
 }
 .wrapper {
 	width: 95%;
 	// height: 90%;
-	padding: $padding-md 0;
+	padding: 2.5vh 0;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -44,36 +50,31 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	align-items: center;
-	position: relative;
+	align-items: flex-start;
 	border-bottom-left-radius: $radius-md;
 	border-top-left-radius: $radius-lg;
-	min-height: 500px;
+	min-height: 50vh;
+	font-family: $body-font;
 	h1 {
 		color: $color1;
 		font-size: $font-lg;
+		font-family: $header-font;
+		font-weight: 500;
+		text-shadow: 2px 2px 5px $color2;
 	}
 	span {
-		color: $color3;
-		margin-bottom: $margin-lg;
-		font-size: $font-md;
+		color: darken($color1, 15%);
+		font-size: $font-lg - .53rem;
+		font-weight: 200;
+		margin-top: -1rem;
+		margin-left: $font-lg - 1.1rem;
 	}
 	p {
 		color: $color1;
 		max-width: 60%;
 		text-align: center;
-		font-size: $font-md;
-	}
-	.mask {
-		position: absolute;
-		background-color: rgba(0, 0, 0, 0.219);
-		top: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-	}
-	.white {
-		color: $color1;
+		font-size: $font-sm;
+		color: lighten($color2, 30%);
 	}
 }
 .right {
@@ -81,11 +82,15 @@ main {
 	background-color: $color1-trans;
 	border-top-right-radius: $radius-md;
 	border-bottom-right-radius: $radius-md;
+	padding: $padding-md;
 }
 @media screen and(max-width: 1368px) {
 	.left {
 		border-bottom-left-radius: 0;
 		border-top-right-radius: $radius-md;
+		p {
+			display: none;
+		}
 	}
 	.right {
 		border-top-right-radius: 0;

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@200;400;700&family=Roboto:wght@100;300;400&display=swap");
 * {
   border: 0;
   padding: 0;
@@ -10,12 +11,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(163deg, #656c5f 8%, rgba(253, 187, 45, 0.61) 100%);
+  background: linear-gradient(163deg, #566683 8%, #ca6144 100%);
 }
 
 .wrapper {
   width: 95%;
-  padding: 2rem 0;
+  padding: 2.5vh 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -30,55 +31,54 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
-  position: relative;
-  border-bottom-left-radius: 80px;
-  border-top-left-radius: 300px;
-  min-height: 500px;
+  align-items: flex-start;
+  border-bottom-left-radius: 5vw;
+  border-top-left-radius: 20vw;
+  min-height: 50vh;
+  font-family: "Roboto", sans-serif;
 }
 .left h1 {
-  color: white;
+  color: #e9e6c9;
   font-size: 3.5rem;
+  font-family: "Azeret Mono", monospace;
+  font-weight: 500;
+  text-shadow: 2px 2px 5px #566683;
 }
 .left span {
-  color: rgba(253, 187, 45, 0.8);
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  color: #d3cd93;
+  font-size: 2.97rem;
+  font-weight: 200;
+  margin-top: -1rem;
+  margin-left: 2.4rem;
 }
 .left p {
-  color: white;
+  color: #e9e6c9;
   max-width: 60%;
   text-align: center;
-  font-size: 2rem;
-}
-.left .mask {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.219);
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-.left .white {
-  color: white;
+  font-size: 1rem;
+  color: #aab5c8;
 }
 
 .right {
   flex: 1 1 650px;
   background-color: rgba(255, 255, 255, 0.7);
-  border-top-right-radius: 80px;
-  border-bottom-right-radius: 80px;
+  border-top-right-radius: 5vw;
+  border-bottom-right-radius: 5vw;
+  padding: 2rem;
 }
 
 @media screen and (max-width: 1368px) {
   .left {
     border-bottom-left-radius: 0;
-    border-top-right-radius: 80px;
+    border-top-right-radius: 5vw;
+  }
+  .left p {
+    display: none;
   }
 
   .right {
     border-top-right-radius: 0;
-    border-bottom-left-radius: 80px;
+    border-bottom-left-radius: 5vw;
   }
 }
 
