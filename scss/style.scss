@@ -50,6 +50,12 @@ $radius-lg: 20vw;
 	font-family: $header-font;
 	font-weight: 500;
 }
+%col-init {
+	flex: 1 1 650px;
+	padding: $padding-sm;
+	font-family: $body-font;
+	font-size: $font-md - .5rem;
+}
 
 @mixin bg($posX: 50%, $posY: 50%) {
 	background-color: $color1-trans;
@@ -75,16 +81,14 @@ main {
 		font-weight: 200;
 		text-shadow: $text-shadow;
 	}
-	flex: 1 1 650px;
+	@extend %col-init;
 	@extend %flex-col;
 	justify-content: flex-end;
 	align-items: flex-start;
 	min-height: 50vh;
 	@include bg();
-	padding: $padding-sm;
 	border-bottom-left-radius: $radius-md;
 	border-top-left-radius: $radius-lg;
-	font-family: $body-font;
 	h1 {
 		@extend %hdr;
 		text-shadow: $text-shadow2;
@@ -97,21 +101,17 @@ main {
 		font-size: $font-sm;
 		color: $accent;
 	}
-	.tag {
+	.container {
 		@extend %flex-col;
 		align-items: center;
 	}
 }
-
 .right {
-	flex: 1 1 650px;
-	background-color: $color1-trans;
+	@extend %col-init;
+	@include bg();
 	border-top-right-radius: $radius-md;
 	border-bottom-right-radius: $radius-md;
-	padding: $padding-sm;
 	min-height: 90vh;
-	font-family: $body-font;
-	font-size: $font-md - .5rem;
 	.container {
 		height: 100%;
 		@extend %flex-col;
@@ -127,13 +127,16 @@ main {
 		justify-content: space-between;
 		align-items: center;
 		padding: $padding-sm;
-		gap: 1em;
-		p {
-			color: lighten($color3, 5%);
-		}
-		span {
-			color: $accent2;
-		}
+		gap: .75em;
+	}
+	.col {
+		@extend %flex-col;
+	}
+	p {
+		color: lighten($color3, 5%);
+	}
+	.accent {
+		color: $accent2;
 	}
 	i {
 		color: $color2;
@@ -142,9 +145,6 @@ main {
 		&:hover {
 			color: $color3;
 		}
-	}
-	.col {
-		@extend %flex-col;
 	}
 	.summary {
 		line-height: 2em;
@@ -194,7 +194,7 @@ main {
 			flex-direction: column;
 			align-items: flex-start;
 			padding-right: 0;
-			.accent {
+			.accentMobile {
 				color: $accent2;
 			}
 		}
