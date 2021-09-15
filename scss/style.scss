@@ -124,6 +124,19 @@ main {
 		display: flex;
 		flex-direction: column;
 	}
+	.summary {
+		line-height: 2em;
+	}
+	.skills {
+		justify-content: flex-start;
+		p {
+			flex-basis: 100%;
+			text-align: center;
+		}
+		&:last-child {
+			padding-top: 0;
+		}
+	}
 }
 @media screen and(max-width: 1368px) {
 	.left {
@@ -153,7 +166,6 @@ main {
 			flex-direction: column;
 			align-items: flex-start;
 			padding-right: 0;
-			padding-bottom: 0;
 		}
 		.icon {
 			align-self: center;
