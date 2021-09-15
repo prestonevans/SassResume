@@ -114,8 +114,9 @@ main {
   flex-basis: 100%;
   text-align: center;
 }
-.right .skills:last-child, .right .edu:last-child {
+.right .skills:nth-of-type(2), .right .edu:nth-of-type(2) {
   padding-top: 0;
+  color: red;
 }
 .right h3 {
   color: #d07258;
