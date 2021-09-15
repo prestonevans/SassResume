@@ -21,6 +21,9 @@ $color2: #566683;
 $color3: #ca6144;
 $color4: #393e51;
 
+$accent: lighten($color2, 30%);
+$accent2: lighten($color2, 10%);
+
 $color1-trans: rgba(255, 255, 255, .7);
 
 $text-shadow: 2px 2px 4px $color2;
@@ -77,7 +80,7 @@ main {
 		color: $color1;
 		text-align: center;
 		font-size: $font-sm;
-		color: lighten($color2, 30%);
+		color: $accent;
 	}
 	.tag {
 		display: flex;
@@ -94,6 +97,12 @@ main {
 	min-height: 90vh;
 	font-family: $body-font;
 	font-size: $font-md - .5rem;
+	.container {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 	h2 {
 		color: $color2;
 		font-size: $font-md;
@@ -108,9 +117,6 @@ main {
 		p {
 			color: lighten($color3, 5%);
 		}
-	}
-	.white {
-		color: lighten($color2, 10%);
 	}
 	i {
 		color: $color2;
@@ -132,12 +138,6 @@ main {
 		p {
 			flex-basis: 100%;
 			text-align: center;
-		}
-
-		// I need to fix this
-		&:nth-of-type(2) {
-			padding-top: 0;
-			color: red;
 		}
 	}
 	.edu {
@@ -178,6 +178,9 @@ main {
 			flex-direction: column;
 			align-items: flex-start;
 			padding-right: 0;
+			.accent {
+				color: $accent2;
+			}
 		}
 		.icon {
 			align-self: center;
