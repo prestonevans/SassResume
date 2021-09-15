@@ -33,11 +33,26 @@ $transition: .25s ease-in-out;
 $radius-sm: 10px;
 $radius-md: 5vw;
 $radius-lg: 20vw;
-main {
-	min-height: 100vh;
+
+%flex-col {
+	display: flex;
+	flex-direction: column;
+}
+%flex-row-center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+@mixin bg($posX: 50%, $posY: 50%) {
+	background-color: $color1-trans;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: $posX $posY;
+}
+main {
+	min-height: 100vh;
+	@extend %flex-row-center;
 	background: linear-gradient(163deg, $color2 8%, $color3 100%);
 }
 .wrapper {
@@ -48,18 +63,14 @@ main {
 }
 .left {
 	flex: 1 1 650px;
-	background-color: white;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
-	padding: $padding-sm;
-	display: flex;
-	flex-direction: column;
+	@extend %flex-col;
 	justify-content: flex-end;
 	align-items: flex-start;
+	min-height: 50vh;
+	@include bg();
+	padding: $padding-sm;
 	border-bottom-left-radius: $radius-md;
 	border-top-left-radius: $radius-lg;
-	min-height: 50vh;
 	font-family: $body-font;
 	h1 {
 		color: $color1;
@@ -83,8 +94,7 @@ main {
 		color: $accent;
 	}
 	.tag {
-		display: flex;
-		flex-direction: column;
+		@extend %flex-col;
 		align-items: center;
 	}
 }
@@ -99,8 +109,7 @@ main {
 	font-size: $font-md - .5rem;
 	.container {
 		height: 100%;
-		display: flex;
-		flex-direction: column;
+		@extend %flex-col;
 		justify-content: center;
 	}
 	h2 {
@@ -117,6 +126,9 @@ main {
 		p {
 			color: lighten($color3, 5%);
 		}
+		span {
+			color: $accent2;
+		}
 	}
 	i {
 		color: $color2;
@@ -127,8 +139,7 @@ main {
 		}
 	}
 	.col {
-		display: flex;
-		flex-direction: column;
+		@extend %flex-col;
 	}
 	.summary {
 		line-height: 2em;
