@@ -90,7 +90,7 @@ main {
   color: #d07258;
 }
 .right .white {
-  color: white;
+  color: #6d7f9f;
 }
 .right i {
   color: #566683;
@@ -107,15 +107,18 @@ main {
 .right .summary {
   line-height: 2em;
 }
-.right .skills {
+.right .skills, .right .edu {
   justify-content: flex-start;
 }
-.right .skills p {
+.right .skills p, .right .edu p {
   flex-basis: 100%;
   text-align: center;
 }
-.right .skills:last-child {
+.right .skills:last-child, .right .edu:last-child {
   padding-top: 0;
+}
+.right h3 {
+  color: #d07258;
 }
 
 @media screen and (max-width: 1368px) {
