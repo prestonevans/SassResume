@@ -86,11 +86,11 @@ main {
   padding: 1rem;
   gap: 1em;
 }
-.right .row span {
-  color: white;
-}
 .right .row p {
   color: #d07258;
+}
+.right .white {
+  color: white;
 }
 .right i {
   color: #566683;

@@ -105,12 +105,12 @@ main {
 		align-items: center;
 		padding: $padding-sm;
 		gap: 1em;
-		span {
-			color: lighten($color1, 15%);
-		}
 		p {
 			color: lighten($color3, 5%);
 		}
+	}
+	.white {
+		color: lighten($color1, 15%);
 	}
 	i {
 		color: $color2;
