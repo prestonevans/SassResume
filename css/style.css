@@ -121,6 +121,9 @@ main {
 .right h3 {
   color: #d07258;
 }
+.right .no-top {
+  padding-top: 0;
+}
 
 @media screen and (max-width: 1368px) {
   .left {
