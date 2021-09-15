@@ -17,6 +17,13 @@ main {
   align-items: center;
 }
 
+.left h1 {
+  color: #e9e6c9;
+  font-size: 3.5rem;
+  font-family: "Azeret Mono", monospace;
+  font-weight: 500;
+}
+
 main {
   min-height: 100vh;
   background: linear-gradient(163deg, #566683 8%, #ca6144 100%);
@@ -43,24 +50,19 @@ main {
   border-top-left-radius: 20vw;
   font-family: "Roboto", sans-serif;
 }
-.left h1 {
-  color: #e9e6c9;
-  font-size: 3.5rem;
-  font-family: "Azeret Mono", monospace;
-  font-weight: 500;
-  text-shadow: -2px -2px 4px #566683;
-}
-.left span {
+.left h2 {
   color: #d3cd93;
   font-size: 2.97rem;
   font-weight: 200;
-  margin-top: -0.4em;
-  margin-left: 0.8em;
   text-shadow: 2px 2px 4px #566683;
 }
-.left p {
-  color: #e9e6c9;
-  text-align: center;
+.left h1 {
+  text-shadow: -2px -2px 4px #566683;
+}
+.left h2 {
+  margin-top: -0.4em;
+}
+.left .traits {
   font-size: 1.5rem;
   color: #aab5c8;
 }
@@ -140,10 +142,10 @@ main {
   .left h1 {
     font-size: 2rem;
   }
-  .left span {
+  .left h2 {
     font-size: 1.7rem;
   }
-  .left p {
+  .left .traits {
     font-size: 0.8rem;
   }
 
