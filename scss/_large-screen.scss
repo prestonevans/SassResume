@@ -1,0 +1,10 @@
+@media screen and(max-width: 1368px) {
+	.left {
+		border-bottom-left-radius: 0;
+		border-top-right-radius: $radius-md;
+	}
+	.right {
+		border-top-right-radius: 0;
+		border-bottom-left-radius: $radius-md;
+	}
+}

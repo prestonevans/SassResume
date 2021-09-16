@@ -1,0 +1,32 @@
+.left {
+	%subhdr {
+		color: darken($color1, 15%);
+		font-size: $font-lg - .53rem;
+		font-weight: 200;
+		text-shadow: $text-shadow;
+	}
+	@extend %col-init;
+	@extend %flex-col;
+	justify-content: flex-end;
+	align-items: flex-start;
+	min-height: 50vh;
+	@include bg();
+	border-bottom-left-radius: $radius-md;
+	border-top-left-radius: $radius-lg;
+	h1 {
+		@extend %hdr;
+		text-shadow: $text-shadow2;
+	}
+	h2 {
+		@extend %subhdr;
+		margin-top: -.4em;
+	}
+	.traits {
+		font-size: $font-sm;
+		color: $accent;
+	}
+	.container {
+		@extend %flex-col;
+		align-items: center;
+	}
+}

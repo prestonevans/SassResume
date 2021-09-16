@@ -1,0 +1,76 @@
+$header-font: 'Azeret Mono', monospace;
+$body-font: 'Roboto', sans-serif;
+
+$padding-sm: 1rem;
+$padding-md: 2rem;
+$padding-lg: 3rem;
+
+$font-sm: 1.5rem;
+$font-md: 2rem;
+$font-lg: 3.5rem;
+
+$margin-sm: .5rem;
+$margin-md: 1rem;
+$margin-lg: 2rem;
+
+$color1: #e9e6c9;
+$color2: #566683;
+$color3: #ca6144;
+$color4: #393e51;
+
+$accent: lighten($color2, 30%);
+$accent2: lighten($color2, 10%);
+
+$color1-trans: rgba(255, 255, 255, .7);
+
+$text-shadow: 2px 2px 4px $color2;
+$text-shadow2: -2px -2px 4px $color2;
+
+$transition: .25s ease-in-out;
+
+$radius-sm: 10px;
+$radius-md: 5vw;
+$radius-lg: 20vw;
+
+%flex-col {
+	display: flex;
+	flex-direction: column;
+}
+%flex-row-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+%hdr {
+	color: $color1;
+	font-size: $font-lg;
+	font-family: $header-font;
+	font-weight: 500;
+}
+%col-init {
+	flex: 1 1 650px;
+	padding: $padding-sm;
+	font-family: $body-font;
+	font-size: $font-md - .7rem;
+}
+%row-init {
+	display: flex;
+	align-items: center;
+	padding: $padding-sm;
+	gap: .75em;
+}
+%icon {
+	color: $color2;
+	transition: $transition;
+	font-size: $font-lg;
+	&:hover {
+		color: $color3;
+	}
+}
+
+@mixin bg($posX: 50%, $posY: 50%) {
+	background-color: $color1-trans;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: $posX $posY;
+}

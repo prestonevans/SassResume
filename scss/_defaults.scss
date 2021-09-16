@@ -4,3 +4,14 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+main {
+	min-height: 100vh;
+	@extend %flex-row-center;
+	background: linear-gradient(163deg, $color2 8%, $color3 100%);
+}
+.wrapper {
+	width: 95%;
+	padding: 2.5vh 0;
+	display: flex;
+	flex-wrap: wrap;
+}
