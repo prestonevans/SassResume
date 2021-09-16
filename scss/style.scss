@@ -54,7 +54,21 @@ $radius-lg: 20vw;
 	flex: 1 1 650px;
 	padding: $padding-sm;
 	font-family: $body-font;
-	font-size: $font-md - .5rem;
+	font-size: $font-md - .7rem;
+}
+%row-init {
+	display: flex;
+	align-items: center;
+	padding: $padding-sm;
+	gap: .75em;
+}
+%icon {
+	color: $color2;
+	transition: $transition;
+	font-size: $font-lg;
+	&:hover {
+		color: $color3;
+	}
 }
 
 @mixin bg($posX: 50%, $posY: 50%) {
@@ -112,10 +126,18 @@ main {
 	border-top-right-radius: $radius-md;
 	border-bottom-right-radius: $radius-md;
 	min-height: 90vh;
+	color: lighten($color3, 5%);
 	.container {
-		height: 100%;
 		@extend %flex-col;
+		height: 100%;
 		justify-content: center;
+	}
+	.col {
+		@extend %flex-col;
+	}
+	.summary {
+		line-height: 2em;
+		font-size: $font-md - .5rem;
 	}
 	h2 {
 		color: $color2;
@@ -123,41 +145,23 @@ main {
 		font-family: $header-font;
 	}
 	.row {
-		display: flex;
+		@extend %row-init;
 		justify-content: space-between;
-		align-items: center;
-		padding: $padding-sm;
-		gap: .75em;
-	}
-	.col {
-		@extend %flex-col;
-	}
-	p {
-		color: lighten($color3, 5%);
 	}
 	.accent {
 		color: $accent2;
 	}
 	i {
-		color: $color2;
-		transition: $transition;
-		font-size: $font-lg;
-		&:hover {
-			color: $color3;
-		}
+		@extend %icon;
 	}
-	.summary {
-		line-height: 2em;
-	}
-	.skills {
-		justify-content: flex-start;
-		p {
+	.row-2 {
+		@extend %row-init;
+		:nth-child(n) {
 			flex-basis: 100%;
-			text-align: center;
 		}
-	}
-	.edu {
-		@extend .skills;
+		:first-child {
+			min-width: 216px;
+		}
 	}
 	h3 {
 		color: lighten($color3, 5%);
@@ -189,7 +193,8 @@ main {
 		}
 	}
 	.right {
-		.row {
+		.row,
+		.row-2 {
 			font-size: 1rem;
 			flex-direction: column;
 			align-items: flex-start;
@@ -197,6 +202,9 @@ main {
 			.accentMobile {
 				color: $accent2;
 			}
+		}
+		.summary {
+			font-size: 1.2rem;
 		}
 		.icon {
 			align-self: center;
